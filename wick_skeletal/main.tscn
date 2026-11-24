@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ex1fx"]
+[ext_resource type="PackedScene" path="res://wick.tscn" id="2_6u0xk"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ex1fx")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.25, 0.29, 0.38, 1)
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_top = 560.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.17, 0.2, 0.26, 1)
+
+[node name="Wick" type="Node2D" parent="." instance=ExtResource("2_6u0xk")]
+position = Vector2(576, 560)
+scale = Vector2(1.6, 1.6)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 20.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 22
+text = "Hold Arrow keys or A/D to walk"

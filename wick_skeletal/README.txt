@@ -1,0 +1,9 @@
+Wick - Skeletal Animation (Godot 4.3)
+
+Controls: hold the left/right arrow keys or A/D to walk. Let go and he goes back to idle.
+
+I used Wick again for this, the hooded lamplighter from my sprite sheet, since he's the main character in my final project. To rig him I cut him into six pieces: the hood, the cloak with the scarf, two arms and two legs. Both arms use the same image and so do both legs. I made the back arm and back leg a little darker so they look farther away. I kept the flat colors and black outline from the sprite sheet so he still looks like the same character.
+
+The skeleton has 7 bones. Hip is the root. The spine and both legs come off the hip, and the head and both arms come off the spine. Each body part is a Polygon2D with extra points inside it so it can bend. For the weights, the cloak goes from the hip at the bottom to the spine at the top, so when he leans the cloak bends instead of folding in one spot. The tops of the arms and legs are split between their own bone and the bone they attach to. Before I did that there were gaps at the shoulders and hips when they rotated. The bottom of the hood is mixed a little with the spine too.
+
+There are two animations. The idle is 2 seconds long. His spine sinks a bit and leans forward, his head tilts and his arms sway, so it looks like he's breathing. The walk is 1 second and covers two steps. His legs swing opposite each other, his arms swing opposite his legs, and the hip drops when his feet are apart and comes back up when they pass each other. The script plays the walk while a key is held, flips him to face the way he's going, and switches back to idle when you let go. There's a 0.2 second blend between them so it doesn't snap. If I kept working on it I would add knee and elbow bones so his legs could bend when he walks.
